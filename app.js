@@ -199,16 +199,22 @@ if (orderForm) {
         e.preventDefault(); // Bloquer l'envoi classique pour traiter en JS
 
         // Désactiver le bouton pour éviter les doubles clics
-        if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enregistrement...';
+        const currentSubmitBtn = document.getElementById('submitOrderBtn') || submitButton;
+        if (currentSubmitBtn) {
+            currentSubmitBtn.disabled = true;
+            currentSubmitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enregistrement...';
         }
 
-        // Récupérer les données du formulaire
-        const fullName = document.getElementById('fullName').value.trim();
-        const phoneNumber = document.getElementById('phoneNumber').value.trim();
-        const city = document.getElementById('city').value.trim();
-        const landmark = document.getElementById('landmark').value.trim();
+        // Récupérer les données du formulaire en toute sécurité
+        const fullNameEl = document.getElementById('fullName');
+        const phoneNumberEl = document.getElementById('phoneNumber');
+        const cityEl = document.getElementById('city');
+        const landmarkEl = document.getElementById('landmark');
+        
+        const fullName = fullNameEl ? fullNameEl.value.trim() : "";
+        const phoneNumber = phoneNumberEl ? phoneNumberEl.value.trim() : "";
+        const city = cityEl ? cityEl.value.trim() : "";
+        const landmark = landmarkEl ? landmarkEl.value.trim() : "";
         const quantityVal = quantitySelect.value;
         const qtyText = pricingText[quantityVal];
         const finalPrice = pricing[quantityVal];
