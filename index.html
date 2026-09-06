@@ -32,8 +32,17 @@
     <!-- End Meta Pixel Code -->
 </head>
 <body>
-
-    <!-- Promo Bar -->
+    <!-- Hidden form to guarantee Netlify detection at root -->
+    <form name="commande-solustore" method="POST" netlify style="display: none;">
+        <input type="text" name="fullName">
+        <input type="tel" name="phoneNumber">
+        <input type="text" name="city">
+        <select name="color"></select>
+        <select name="quantity"></select>
+        <input type="text" name="landmark">
+    </form>
+    
+    <!-- Top Promo Bar -->
     <div class="promo-bar" id="promoBar">
         <span>SoluStore : Livraison & Expédition <strong>GRATUITES</strong> en 2h à Ouagadougou 🚚</span>
     </div>
