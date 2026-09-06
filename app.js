@@ -286,11 +286,11 @@ Merci de confirmer ma commande pour la livraison !`;
             }
         }
 
-        // Sécurité : Forcer la redirection après 1.5 seconde au cas où le réseau est très lent
+        // Sécurité : Forcer la redirection après 4 secondes au cas où le réseau est très lent
         const fallbackTimeout = setTimeout(() => {
             console.log("Timeout de sécurité déclenché, redirection forcée.");
             redirectUser();
-        }, 1500);
+        }, 4000);
 
         // 1c. Préparer le tracking Facebook Conversions API & Envoi Supabase (Server-side via Netlify Functions)
         const capiPromise = fetch("/.netlify/functions/track-purchase", {
@@ -322,10 +322,15 @@ Merci de confirmer ma commande pour la livraison !`;
 
         // 2. Préparer l'envoi silencieux à Netlify Forms en arrière-plan
         const formData = new FormData(orderForm);
+        const searchParams = new URLSearchParams();
+        for (const pair of formData.entries()) {
+            searchParams.append(pair[0], pair[1]);
+        }
+        
         const netlifyPromise = fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
+            body: searchParams.toString()
         })
         .then(() => {
             console.log("Commande envoyée avec succès à Netlify !");
