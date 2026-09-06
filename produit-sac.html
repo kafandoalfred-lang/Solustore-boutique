@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sac à Dos ESSENTIALS | SoluStore Burkina</title>
+    <meta name="description" content="Sac à dos officiel ESSENTIALS. Matériau étanche, compartiment matelassé PC 15.6'' et livraison GRATUITE en 2h à Ouagadougou. 12.500 FCFA.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=3">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1580750226796883');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1580750226796883&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+    <!-- Promo Bar -->
+    <div class="promo-bar" id="promoBar">
+        <span>SoluStore : Livraison & Expédition <strong>GRATUITES</strong> en 2h à Ouagadougou 🚚</span>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">Solu</span>Store
+            </a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <span class="badge-tag-minimal"><i class="fa-solid fa-bolt" style="color: var(--accent-color);"></i> En Stock</span>
+                <a href="#order-section" class="btn-header">Acheter</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Product Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                
+                <!-- Gallery -->
+                <div class="hero-gallery">
+                    <div class="main-image-container">
+                        <img src="essentials-etudiant.jpg" alt="Sac à dos ESSENTIALS" id="mainProductImage">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="essentials-etudiant.jpg" alt="Étudiant avec sac Essentials" class="thumbnail active" onclick="changeImage('essentials-etudiant.jpg', this)">
+                        <img src="essentials-vert-nouveau.jpg" alt="Sac ESSENTIALS Vert Kaki" class="thumbnail" onclick="changeImage('essentials-vert-nouveau.jpg', this)">
+                        <img src="essentials-gris-podium.jpg" alt="Sac ESSENTIALS Gris Podium Studio" class="thumbnail" onclick="changeImage('essentials-gris-podium.jpg', this)">
+                        <img src="essentials-poster-cyan.jpg" alt="Sac ESSENTIALS Noir et Cyan" class="thumbnail" onclick="changeImage('essentials-poster-cyan.jpg', this)">
+                    </div>
+                </div>
+
+                <!-- Product Info & Form -->
+                <div class="hero-buy-box">
+                    <span class="badge-tag-minimal" style="width: fit-content; margin-bottom: 0.5rem;">L'ÉDITION ESSENTIALS</span>
+                    <h1>Sac à Dos Premium Imperméable</h1>
+                    <p class="tagline">Conçu pour ceux qui exigent l'excellence au quotidien. Textile Oxford imperméable et protection intégrale pour votre ordinateur 15.6". Parfait pour les cours ou le bureau.</p>
+                    
+                    <div class="price-container">
+                        <span class="price-new">12 500 FCFA</span>
+                        <span class="price-old">20 000 FCFA</span>
+                    </div>
+
+                    <div class="reassurance-box">
+                        <div class="reassurance-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Livraison gratuite et rapide sous 2H (Ouagadougou)</span>
+                        </div>
+                        <div class="reassurance-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Paiement à la livraison après vérification du produit</span>
+                        </div>
+                        <div class="reassurance-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Qualité Premium garantie SoluStore</span>
+                        </div>
+                    </div>
+
+                    <!-- Mini Checkout Form -->
+                    <div class="mini-checkout-wrapper" id="order-section">
+                        <h3>Commander votre sac</h3>
+                        <p class="form-sub">Remplissez ce formulaire pour être livré(e) dans les 2 heures.</p>
+                        
+                        <form name="commande-rapide" method="POST" netlify id="orderForm" class="order-form"
+                              data-product-name="Sac à Dos ESSENTIALS Édition Premium"
+                              data-price1="12500"
+                              data-price2="25000"
+                              data-price-text1="1 Sac ESSENTIALS (12 500 FCFA - LIVRAISON GRATUITE)"
+                              data-price-text2="2 Sacs ESSENTIALS (25 000 FCFA)">
+                            <input type="hidden" name="form-name" value="commande-rapide">
+                            <input type="hidden" name="productName" value="Sac à Dos ESSENTIALS">
+                            
+                            <div class="form-group">
+                                <label for="fullName">Nom & Prénom</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="fullName" name="fullName" placeholder="Ex: Alfred Kafando" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phoneNumber">Numéro de Téléphone (WhatsApp)</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Ex: 58 90 98 06" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city">Ville & Quartier (Adresse de livraison)</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" id="city" name="city" placeholder="Ex: Ouagadougou, Zone 1" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="color">Couleur souhaitée</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-palette"></i>
+                                    <select id="color" name="color" required>
+                                        <option value="Vert Kaki" selected>Vert Olive Premium</option>
+                                        <option value="Gris Anthracite">Noir & Gris Anthracite</option>
+                                        <option value="Noir & Bleu Océan">Noir & Bleu Océan (Best-Seller)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="quantity">Quantité & Offres</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <select id="quantity" name="quantity">
+                                        <option value="1" selected>1 Sac (12 500 FCFA)</option>
+                                        <option value="2">Pack Duo - 2 Sacs (25 000 FCFA)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="total-display">
+                                <span>Total à régler :</span>
+                                <strong id="totalPrice">12 500 FCFA</strong>
+                            </div>
+
+                            <button type="submit" class="btn-submit" id="submitOrderBtn">
+                                Valider la commande
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                            <p class="security-note" style="color: var(--warning-color); font-weight: 600; margin-top: 1rem;">
+                                <i class="fa-solid fa-triangle-exclamation"></i> IMPORTANT : Ne commandez que si vous êtes prêt(e) à recevoir le colis et payer aujourd'hui.
+                            </p>
+                            <p class="security-note" style="margin-top: 0.5rem;">
+                                <i class="fa-solid fa-shield-halved"></i> Paiement en espèces au livreur. Aucun frais caché.
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Icons Section -->
+        <section class="features-section">
+            <div class="section-title">
+                <h2>L'attention aux détails</h2>
+                <p>Découvrez ce qui fait la différence au quotidien.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-icon-card">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h3>Compartiment Matelassé</h3>
+                    <p>Protection anti-chocs spécialement conçue pour ordinateurs portables jusqu'à 15.6 pouces.</p>
+                </div>
+
+                <div class="feature-icon-card">
+                    <i class="fa-solid fa-droplet-slash"></i>
+                    <h3>Textile Imperméable</h3>
+                    <p>L'eau glisse sur la surface. Protégez efficacement vos affaires pendant la saison des pluies.</p>
+                </div>
+
+                <div class="feature-icon-card">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>Grande Capacité</h3>
+                    <p>Espace intérieur optimisé pour transporter facilement tous vos cahiers, livres et documents de travail.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="logo" style="justify-content: center; margin-bottom: 0.5rem; font-size: 1.5rem;">
+            <span class="logo-accent">Solu</span>Store Burkina
+        </div>
+        <p>Boutique officielle d'équipements haut de gamme.</p>
+        <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-dim);">© 2026 SoluStore - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Sticky Buy Bar Mobile -->
+    <div class="sticky-buy-bar" id="stickyBuyBar">
+        <div class="sticky-info">
+            <span class="sticky-title">Sac ESSENTIALS Premium</span>
+            <span class="sticky-price">12 500 FCFA</span>
+        </div>
+        <a href="#order-section" class="btn-header" style="padding: 0.6rem 1.2rem;">
+            Acheter
+        </a>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
