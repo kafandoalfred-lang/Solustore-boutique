@@ -80,7 +80,7 @@ exports.handler = async (event, context) => {
         // 1. GESTION DES CLÉS DE CONFIGURATION
         // -------------------------------------------------------------
         const accessToken = process.env.META_ACCESS_TOKEN;
-        const pixelId = '1580750226796883'; // ID du Pixel d'Alfred
+        const pixelId = '1630291368708667'; // Nouvel ID du Pixel d'Alfred
         const supabaseUrl = process.env.SUPABASE_URL;
         const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 
