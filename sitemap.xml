@@ -7,9 +7,15 @@
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://solustore.netlify.app/produit-sac</loc>
-      <lastmod>2026-09-06</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.9</priority>
-   </url>
+    <loc>https://solustore.netlify.app/produit-sac</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solustore.netlify.app/produit-landkaidi</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
