@@ -215,9 +215,9 @@ if (orderForm) {
         const phoneNumber = phoneNumberEl ? phoneNumberEl.value.trim() : "";
         const city = cityEl ? cityEl.value.trim() : "";
         const landmark = landmarkEl ? landmarkEl.value.trim() : "";
-        const quantityVal = quantitySelect.value;
-        const qtyText = pricingText[quantityVal];
-        const finalPrice = pricing[quantityVal];
+        const quantityVal = quantitySelect ? quantitySelect.value : "1";
+        const qtyText = quantitySelect ? pricingText[quantityVal] : pricingText["1"];
+        const finalPrice = quantitySelect ? pricing[quantityVal] : pricing["1"];
         const orderId = 'order_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
 
         // Préparer le message WhatsApp
