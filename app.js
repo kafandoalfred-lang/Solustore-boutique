@@ -353,3 +353,22 @@ Merci de confirmer ma commande pour la livraison !`;
         });
     });
 }
+
+
+// Gestion globale de l'affichage du formulaire pour le bouton 'Commander'
+document.addEventListener('DOMContentLoaded', () => {
+    const orderSection = document.getElementById('order-section');
+    if(orderSection) {
+        // Rendre visible si on accède directement avec #orderForm
+        if(window.location.hash === '#orderForm') {
+            orderSection.style.display = 'block';
+        }
+        
+        // Intercepter tous les clics sur les boutons qui pointent vers le formulaire
+        document.querySelectorAll('a[href$="#orderForm"], a[href$="#order-section"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                orderSection.style.display = 'block';
+            });
+        });
+    }
+});
