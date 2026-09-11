@@ -778,26 +778,27 @@ h1, h2, h3, h4 {
     display: flex;
     transition: transform 0.5s ease-in-out;
     gap: 2rem;
+    flex-wrap: nowrap;
 }
 
 /* On override le CSS de la grille existante si elle est dans un slider */
 .slider-track > .feature-card {
     flex: 0 0 calc(100% - 2rem);
     min-width: calc(100% - 2rem);
-    margin: 0 1rem;
+    margin: 0;
 }
 
 @media(min-width: 768px) {
     .slider-track > .feature-card {
-        flex: 0 0 calc(50% - 2rem);
-        min-width: calc(50% - 2rem);
+        flex: 0 0 calc(50% - 1rem);
+        min-width: calc(50% - 1rem);
     }
 }
 
 @media(min-width: 1024px) {
     .slider-track > .feature-card {
-        flex: 0 0 calc(33.333% - 2rem);
-        min-width: calc(33.333% - 2rem);
+        flex: 0 0 calc(33.333% - 1.33rem);
+        min-width: calc(33.333% - 1.33rem);
     }
 }
 

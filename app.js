@@ -400,8 +400,10 @@ function moveSlider(direction) {
         currentSlide = totalCards - visibleCards; // loop to end
     }
     
-    const offset = -(currentSlide * (100 / visibleCards));
-    sliderTrack.style.transform = 	ranslateX(%);
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 32; // 2rem
+    const shift = (cardWidth + gap) * currentSlide;
+    sliderTrack.style.transform = 	ranslateX(-px);
 }
 
 function startSliderAutoPlay() {
