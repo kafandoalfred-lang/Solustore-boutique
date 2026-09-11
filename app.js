@@ -374,63 +374,94 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // -------------------------------------------------------------
-// 10. CATALOG SLIDER
+
 // -------------------------------------------------------------
-const sliderTrack = document.getElementById('sliderTrack');
-let currentSlide = 0;
-let slideInterval;
-
-function getVisibleCardsCount() {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 768) return 2;
-    return 1;
-}
-
-function moveSlider(direction) {
-    if (!sliderTrack) return;
-    const cards = sliderTrack.querySelectorAll('.feature-card');
-    const totalCards = cards.length;
-    const visibleCards = getVisibleCardsCount();
-    
-    currentSlide += direction;
-    
-    if (currentSlide > totalCards - visibleCards) {
-        currentSlide = 0; // loop back to start
-    } else if (currentSlide < 0) {
-        currentSlide = totalCards - visibleCards; // loop to end
+// 10. DYNAMIC CATALOG CARDS
+// -------------------------------------------------------------
+const essentialsSlides = [
+    {
+        img: "essentials-vert-nouveau.jpg",
+        badge: "+ Mini Pochette Offerte",
+        badgeColor: "var(--success-color)",
+        badgeBg: "rgba(5, 150, 105, 0.1)",
+        title: "ESSENTIALS : Vert Olive",
+        desc: "Finition naturelle matte avec petite pochette zippée assortie pour vos accessoires."
+    },
+    {
+        img: "essentials-poster-cyan.jpg",
+        badge: "Best-Seller",
+        badgeColor: "var(--text-color)",
+        badgeBg: "rgba(0,0,0,0.05)",
+        title: "ESSENTIALS : Noir & Bleu",
+        desc: "Contraste dynamique et audacieux. Parfait pour les étudiants et les esprits créatifs."
+    },
+    {
+        img: "essentials-gris-podium.jpg",
+        badge: "Édition Classique",
+        badgeColor: "var(--text-color)",
+        badgeBg: "rgba(0,0,0,0.05)",
+        title: "ESSENTIALS : Noir & Gris",
+        desc: "L'élégance discrète pour le bureau. S'accorde parfaitement avec une tenue professionnelle."
     }
-    
-    const cardWidth = cards[0].offsetWidth;
-    const gap = 32; // 2rem
-    const shift = (cardWidth + gap) * currentSlide;
-    sliderTrack.style.transform = 	ranslateX(-px);
-}
+];
 
-function startSliderAutoPlay() {
-    if (sliderTrack) {
-        slideInterval = setInterval(() => {
-            moveSlider(1);
-        }, 4000);
+const landkaidiSlides = [
+    {
+        img: "landkaidi-vert.jpg",
+        badge: "Vert Olive",
+        badgeColor: "var(--success-color)",
+        badgeBg: "rgba(5, 150, 105, 0.1)",
+        title: "LANDKAIDI : Vert Olive",
+        desc: "Tissu Jean très résistant et dos renforcé ultra confortable. Idéal pour voyager."
+    },
+    {
+        img: "landkaidi-rose.jpg",
+        badge: "Kaki Tendance",
+        badgeColor: "var(--primary-accent)",
+        badgeBg: "rgba(30, 58, 138, 0.1)",
+        title: "LANDKAIDI : Kaki",
+        desc: "L'alliage parfait entre robustesse et style décontracté pour vos sorties quotidiennes."
     }
+];
+
+function initDynamicCard(cardId, slides, interval) {
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    
+    let currentIndex = 0;
+    const imgEl = card.querySelector('.dyn-img');
+    const badgeEl = card.querySelector('.dyn-badge');
+    const titleEl = card.querySelector('.dyn-title');
+    const descEl = card.querySelector('.dyn-desc');
+    
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        const slide = slides[currentIndex];
+        
+        // Remove fade class to reset animation
+        imgEl.classList.remove('fade-in');
+        titleEl.classList.remove('fade-in');
+        descEl.classList.remove('fade-in');
+        badgeEl.classList.remove('fade-in');
+        
+        // Timeout to allow DOM to register removal, then apply new content and re-add class
+        setTimeout(() => {
+            imgEl.src = slide.img;
+            badgeEl.textContent = slide.badge;
+            badgeEl.style.color = slide.badgeColor;
+            badgeEl.style.background = slide.badgeBg;
+            titleEl.textContent = slide.title;
+            descEl.textContent = slide.desc;
+            
+            imgEl.classList.add('fade-in');
+            titleEl.classList.add('fade-in');
+            descEl.classList.add('fade-in');
+            badgeEl.classList.add('fade-in');
+        }, 50);
+        
+    }, interval);
 }
 
-function stopSliderAutoPlay() {
-    clearInterval(slideInterval);
-}
-
-if (sliderTrack) {
-    startSliderAutoPlay();
-    
-    sliderTrack.addEventListener('mouseenter', stopSliderAutoPlay);
-    sliderTrack.addEventListener('mouseleave', startSliderAutoPlay);
-    
-    // Pour le tactile
-    sliderTrack.addEventListener('touchstart', stopSliderAutoPlay);
-    sliderTrack.addEventListener('touchend', startSliderAutoPlay);
-    
-    // Recalculate on resize
-    window.addEventListener('resize', () => {
-        currentSlide = 0;
-        sliderTrack.style.transform = 	ranslateX(0%);
-    });
-}
+// Initialize dynamic cards
+initDynamicCard('card-essentials', essentialsSlides, 3500);
+initDynamicCard('card-landkaidi', landkaidiSlides, 3800); // Différent délai pour éviter une synchro visuelle
