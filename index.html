@@ -92,7 +92,10 @@
                 <p>Découvrez tous nos modèles disponibles. Chaque produit bénéficie de la livraison gratuite sous 2h à Ouagadougou.</p>
             </div>
 
-            <div class="features-grid">
+            <div class="slider-container" id="catalogSlider">
+                <button class="slider-btn slider-btn-prev" onclick="moveSlider(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn slider-btn-next" onclick="moveSlider(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="slider-track" id="sliderTrack">
                 <!-- Modèle Landkaidi -->
                 <div class="feature-card">
                     <div class="feature-image-wrapper">
@@ -120,6 +123,7 @@
                         <a href="produit-sac.html" class="btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Découvrir</a>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
