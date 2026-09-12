@@ -465,3 +465,26 @@ function initDynamicCard(cardId, slides, interval) {
 // Initialize dynamic cards
 initDynamicCard('card-essentials', essentialsSlides, 3500);
 initDynamicCard('card-landkaidi', landkaidiSlides, 3800); // Différent délai pour éviter une synchro visuelle
+
+// -------------------------------------------------------------
+// 11. FAQ ACCORDION
+// -------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+            
+            // Open if wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+});

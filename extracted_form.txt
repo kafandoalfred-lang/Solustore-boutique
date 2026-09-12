@@ -1,0 +1,49 @@
+<form name="commande-solustore" method="POST" netlify id="orderForm" class="order-form"
+                              data-product-name="Sac à Dos ESSENTIALS Édition Premium"
+                              data-price1="12500"
+                              data-price2="25000"
+                              data-price-text1="1 Sac ESSENTIALS (12 500 FCFA - LIVRAISON GRATUITE)"
+                              data-price-text2="2 Sacs ESSENTIALS (25 000 FCFA)">
+                            <input type="hidden" name="form-name" value="commande-solustore">
+                            <input type="hidden" name="productName" value="Sac à Dos ESSENTIALS">
+                            
+                            <div class="form-group">
+                                <label for="fullName">Nom & Prénom</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="fullName" name="fullName" placeholder="Ex: Alfred Kafando" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phoneNumber">Numéro de Téléphone (WhatsApp)</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Ex: 58 90 98 06" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="color">Couleur souhaitée</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-palette"></i>
+                                    <select id="color" name="color" required>
+                                        <option value="Vert Kaki" selected>Vert Olive Premium</option>
+                                        <option value="Gris Anthracite">Noir & Gris Anthracite</option>
+                                        <option value="Noir & Bleu Océan">Noir & Bleu Océan (Best-Seller)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-submit btn-confirm" id="submitOrderBtn">
+                                Valider la commande
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <div class="info-message" style="background: rgba(30, 58, 138, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; margin-bottom: 0.5rem; text-align: center; border: 1px dashed rgba(30, 58, 138, 0.3);">
+                                <i class="fa-solid fa-truck" style="color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 1.2rem;"></i>
+                                <p style="font-size: 0.9rem; font-weight: 500; margin: 0; color: var(--text-color);">Une personne de l'équipe vous contactera pour organiser la livraison.</p>
+                            </div>
+                            <p class="security-note" style="margin-top: 0.5rem;">
+                                <i class="fa-solid fa-shield-halved"></i> Paiement en espèces au livreur. Aucun frais caché.
+                            </p>
+                        </form>

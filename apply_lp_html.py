@@ -1,62 +1,25 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sac à Dos ESSENTIALS | SoluStore Burkina</title>
-    <meta name="description" content="Sac à dos officiel ESSENTIALS. Matériau étanche, compartiment matelassé PC 15.6'' et livraison GRATUITE en 2h à Ouagadougou. 12.500 FCFA.">
-    <!-- OpenGraph & Social Sharing Meta Tags -->
-    <meta property="og:title" content="Sac à Dos ESSENTIALS | SoluStore Burkina">
-    <meta property="og:description" content="Sac à dos officiel ESSENTIALS. Matériau étanche, 15.6''. Livraison express gratuite à Ouagadougou !">
-    <meta property="og:image" content="https://solustore.netlify.app/sac-essentials-bleu.jpg">
-    <meta property="og:url" content="https://solustore.netlify.app/produit-sac">
-    <meta property="og:type" content="product">
-    <meta name="theme-color" content="#0284c7">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=3">
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1630291368708667');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1630291368708667&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-</head>
-<body>
+﻿import re
 
-    <!-- Promo Bar -->
-    <div class="promo-bar" id="promoBar">
-        <span>SoluStore : Livraison & Expédition <strong>GRATUITES</strong> en 2h à Ouagadougou 🚚</span>
-    </div>
+with open('extracted_form.txt', 'r', encoding='utf-8') as f:
+    form_content = f.read()
 
-    <!-- Header -->
-    <header class="main-header" id="mainHeader">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <span class="logo-accent">Solu</span>Store
-            </a>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <span class="badge-tag-minimal"><i class="fa-solid fa-bolt" style="color: var(--accent-color);"></i> En Stock</span>
-                <a href="#order-section" class="btn-header">Acheter</a>
-            </div>
-        </div>
-    </header>
+# Make sure form has the CTA button if it was missing or if we need to style it. The existing form already has a button.
+
+with open('produit-sac.html', 'r', encoding='utf-8') as f:
+    original_html = f.read()
+
+# Extract head and footer
+head_match = re.search(r'(<!DOCTYPE html>.*?</header>)', original_html, re.DOTALL)
+footer_match = re.search(r'(<footer.*)', original_html, re.DOTALL)
+
+if not head_match or not footer_match:
+    print("Error extracting head or footer.")
+    exit(1)
+
+head_content = head_match.group(1)
+footer_content = footer_match.group(1)
+
+new_main = f'''
     <main class="landing-main">
         <!-- 1. HERO -->
         <section class="lp-hero">
@@ -243,55 +206,7 @@
                 <h3 style="text-align: center; margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--text-main);">Je remplis ce formulaire pour commander mon sac</h3>
                 <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Simple, rapide et 100% sécurisé (Paiement à la livraison).</p>
                 
-                <form name="commande-solustore" method="POST" netlify id="orderForm" class="order-form"
-                              data-product-name="Sac à Dos ESSENTIALS Édition Premium"
-                              data-price1="12500"
-                              data-price2="25000"
-                              data-price-text1="1 Sac ESSENTIALS (12 500 FCFA - LIVRAISON GRATUITE)"
-                              data-price-text2="2 Sacs ESSENTIALS (25 000 FCFA)">
-                            <input type="hidden" name="form-name" value="commande-solustore">
-                            <input type="hidden" name="productName" value="Sac à Dos ESSENTIALS">
-                            
-                            <div class="form-group">
-                                <label for="fullName">Nom & Prénom</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-solid fa-user"></i>
-                                    <input type="text" id="fullName" name="fullName" placeholder="Ex: Alfred Kafando" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phoneNumber">Numéro de Téléphone (WhatsApp)</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-solid fa-phone"></i>
-                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Ex: 58 90 98 06" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="color">Couleur souhaitée</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-solid fa-palette"></i>
-                                    <select id="color" name="color" required>
-                                        <option value="Vert Kaki" selected>Vert Olive Premium</option>
-                                        <option value="Gris Anthracite">Noir & Gris Anthracite</option>
-                                        <option value="Noir & Bleu Océan">Noir & Bleu Océan (Best-Seller)</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn-submit btn-confirm" id="submitOrderBtn">
-                                Valider la commande
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                            <div class="info-message" style="background: rgba(30, 58, 138, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; margin-bottom: 0.5rem; text-align: center; border: 1px dashed rgba(30, 58, 138, 0.3);">
-                                <i class="fa-solid fa-truck" style="color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 1.2rem;"></i>
-                                <p style="font-size: 0.9rem; font-weight: 500; margin: 0; color: var(--text-color);">Une personne de l'équipe vous contactera pour organiser la livraison.</p>
-                            </div>
-                            <p class="security-note" style="margin-top: 0.5rem;">
-                                <i class="fa-solid fa-shield-halved"></i> Paiement en espèces au livreur. Aucun frais caché.
-                            </p>
-                        </form>
+                {form_content}
                 
             </div>
         </section>
@@ -331,25 +246,10 @@
         </div>
 
     </main>
-<footer class="main-footer">
-        <div class="logo" style="justify-content: center; margin-bottom: 0.5rem; font-size: 1.5rem;">
-            <span class="logo-accent">Solu</span>Store Burkina
-        </div>
-        <p>Boutique officielle d'équipements haut de gamme.</p>
-        <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-dim);">© 2026 SoluStore - Tous droits réservés.</p>
-    </footer>
+'''
 
-    <!-- Sticky Buy Bar Mobile -->
-    <div class="sticky-buy-bar" id="stickyBuyBar">
-        <div class="sticky-info">
-            <span class="sticky-title">Sac ESSENTIALS Premium</span>
-            <span class="sticky-price">12 500 FCFA</span>
-        </div>
-        <a href="#order-section" class="btn-header" style="padding: 0.6rem 1.2rem;">
-            Acheter
-        </a>
-    </div>
+final_html = head_content + new_main + footer_content
 
-    <script src="app.js?v=2"></script>
-</body>
-</html>
+with open('produit-sac.html', 'w', encoding='utf-8') as f:
+    f.write(final_html)
+print("Updated produit-sac.html successfully.")
