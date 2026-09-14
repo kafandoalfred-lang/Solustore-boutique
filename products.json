@@ -1,24 +1,35 @@
-﻿[
-    {
-        "id": "sac-essentials",
-        "title": "Sac à dos ESSENTIALS",
-        "description": "Sac à dos officiel ESSENTIALS. Matériau étanche, compartiment matelassé PC 15.6 pouces et livraison GRATUITE en 2h à Ouagadougou.",
-        "availability": "in stock",
-        "condition": "new",
-        "price": "12500 XOF",
-        "link": "https://solustore.netlify.app/produit-sac.html",
-        "image_link": "https://solustore.netlify.app/essentials-etudiant-campus.jpg",
-        "brand": "Essentials"
-    },
-    {
-        "id": "sac-landkaidi",
-        "title": "Sac à dos LANDKAIDI",
-        "description": "Sac à dos LANDKAIDI résistant et élégant, idéal pour étudiants et professionnels. Livraison gratuite.",
-        "availability": "in stock",
-        "condition": "new",
-        "price": "10000 XOF",
-        "link": "https://solustore.netlify.app/produit-landkaidi.html",
-        "image_link": "https://solustore.netlify.app/photo_2026-06-25_02-23-44.jpg",
-        "brand": "Landkaidi"
-    }
+[
+  {
+    "id": "sac-essentials",
+    "title": "Sac à dos ESSENTIALS",
+    "description": "Sac à dos officiel ESSENTIALS. Matériau étanche, compartiment matelassé PC 15.6 pouces et livraison GRATUITE en 2h à Ouagadougou.",
+    "availability": "in stock",
+    "condition": "new",
+    "price": "12500 XOF",
+    "link": "https://solustore.netlify.app/produit-sac.html",
+    "image_link": "https://solustore.netlify.app/essentials-etudiant-campus.jpg",
+    "brand": "Essentials"
+  },
+  {
+    "id": "sac-landkaidi",
+    "title": "Sac à dos LANDKAIDI",
+    "description": "Sac à dos LANDKAIDI résistant et élégant, idéal pour étudiants et professionnels. Livraison gratuite.",
+    "availability": "in stock",
+    "condition": "new",
+    "price": "10000 XOF",
+    "link": "https://solustore.netlify.app/produit-landkaidi.html",
+    "image_link": "https://solustore.netlify.app/photo_2026-06-25_02-23-44.jpg",
+    "brand": "Landkaidi"
+  },
+  {
+    "id": "sac-cat",
+    "title": "Sac à Dos CAT",
+    "description": "Sac à dos CAT très résistant en tissu Jean. Idéal pour voyager, avec cadenas antivol intégré. Livraison GRATUITE.",
+    "availability": "in stock",
+    "condition": "new",
+    "price": "10000 XOF",
+    "link": "https://solustore.netlify.app/produit-cat.html",
+    "image_link": "https://solustore.netlify.app/cat-sac-face.jpg",
+    "brand": "Caterpillar"
+  }
 ]
