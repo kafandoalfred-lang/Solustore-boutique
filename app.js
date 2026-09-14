@@ -277,6 +277,7 @@ Merci de confirmer ma commande pour la livraison !`;
             fbq('track', 'Purchase', {
                 value: numericPrice,
                 currency: 'XOF',
+                content_ids: [orderForm.dataset.productId || 'unknown'],
                 content_name: productName,
                 content_type: 'product'
             }, { eventID: orderId });
