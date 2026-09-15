@@ -425,6 +425,60 @@ const landkaidiSlides = [
     }
 ];
 
+const catSlides = [
+    {
+        img: "cat-sac-face.jpg",
+        badge: "NOUVEAU • Format XL",
+        badgeColor: "var(--success-color)",
+        badgeBg: "rgba(5, 150, 105, 0.1)",
+        title: "SAC À DOS CAT",
+        desc: "Assez gros pour voyager. Tissu en jean ultra-résistant."
+    },
+    {
+        img: "cat-sac-profil.jpg",
+        badge: "Cadenas Antivol",
+        badgeColor: "var(--text-color)",
+        badgeBg: "rgba(0,0,0,0.05)",
+        title: "SAC À DOS CAT",
+        desc: "Système de sécurité intégré pour verrouiller vos objets de valeur."
+    },
+    {
+        img: "cat-sac-details.jpg",
+        badge: "Tissu Jean",
+        badgeColor: "var(--text-color)",
+        badgeBg: "rgba(0,0,0,0.05)",
+        title: "SAC À DOS CAT",
+        desc: "Haute résistance aux intempéries et à l'usure quotidienne."
+    }
+];
+
+const sacocheSlides = [
+    {
+        img: "sacoche-1.jpg",
+        badge: "NOUVEAU • Cuir PU",
+        badgeColor: "var(--success-color)",
+        badgeBg: "rgba(5, 150, 105, 0.1)",
+        title: "SACOCHE POUR HOMME",
+        desc: "Élégance au quotidien. Revêtement en Cuir PU texturé premium."
+    },
+    {
+        img: "sacoche-2.jpg",
+        badge: "Style Élégant",
+        badgeColor: "var(--text-color)",
+        badgeBg: "rgba(0,0,0,0.05)",
+        title: "SACOCHE POUR HOMME",
+        desc: "S'adapte parfaitement à toutes vos tenues de ville ou d'affaires."
+    },
+    {
+        img: "sacoche-3.jpg",
+        badge: "Multiples Poches",
+        badgeColor: "var(--text-color)",
+        badgeBg: "rgba(0,0,0,0.05)",
+        title: "SACOCHE POUR HOMME",
+        desc: "Intérieur organisé pour vos affaires, téléphone et portefeuille."
+    }
+];
+
 function initDynamicCard(cardId, slides, interval) {
     const card = document.getElementById(cardId);
     if (!card) return;
@@ -465,7 +519,10 @@ function initDynamicCard(cardId, slides, interval) {
 
 // Initialize dynamic cards
 initDynamicCard('card-essentials', essentialsSlides, 3500);
-initDynamicCard('card-landkaidi', landkaidiSlides, 3800); // Différent délai pour éviter une synchro visuelle
+initDynamicCard('card-landkaidi', landkaidiSlides, 3800);
+initDynamicCard('card-cat', catSlides, 4100);
+initDynamicCard('card-sacoche', sacocheSlides, 3600);
+ // Différent délai pour éviter une synchro visuelle
 
 // -------------------------------------------------------------
 // 11. FAQ ACCORDION
