@@ -31,5 +31,16 @@
     "link": "https://solustore.netlify.app/produit-cat.html",
     "image_link": "https://solustore.netlify.app/cat-sac-face.jpg",
     "brand": "Caterpillar"
+  },
+  {
+    "id": "sacoche-homme",
+    "title": "Sacoche pour Homme",
+    "description": "Sacoche élégante pour homme en Cuir PU de haute qualité. Parfaite pour le quotidien et les affaires. Livraison GRATUITE.",
+    "availability": "in stock",
+    "condition": "new",
+    "price": "7000 XOF",
+    "link": "https://solustore.netlify.app/produit-sacoche.html",
+    "image_link": "https://solustore.netlify.app/sacoche-1.jpg",
+    "brand": "SoluStore"
   }
 ]
